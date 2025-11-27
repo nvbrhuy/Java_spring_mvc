@@ -1,6 +1,6 @@
 package vn.hoidanit.laptopshop.domain;
 
-public class user {
+public class User {
     private long id;
     private String email;
     private String password;
@@ -58,7 +58,7 @@ public class user {
 
     @Override
     public String toString() {
-        return "user [id=" + id + ", email=" + email + ", password=" + password + ", fullName=" + fullName
+        return "User [id=" + id + ", email=" + email + ", password=" + password + ", fullName=" + fullName
                 + ", address=" + address + ", phone=" + phone + "]";
     }
 
