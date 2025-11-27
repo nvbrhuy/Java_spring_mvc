@@ -24,6 +24,11 @@ public class UserController {
         model.addAttribute("bhuy", "from controller whith model");
         return "hello";
     }
+
+    @RequestMapping("/admin/user")
+    public String createUser() {
+        return "admin/user/create";
+    }
 }
 
 // @RestController
