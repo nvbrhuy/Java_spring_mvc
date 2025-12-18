@@ -40,26 +40,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>
-                                <div class="btn btn-success">View</div>
-                                <div class="btn btn-warning">Update</div>
-                                <div class="btn btn-danger">Delete</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>
-                                <div class="btn btn-success">View</div>
-                                <div class="btn btn-warning">Update</div>
-                                <div class="btn btn-danger">Delete</div>
-                            </td>
-                        </tr>
+                        <c:forEach var="user" items="${user1}">
+                            <tr>
+                                <th scope="row">${user.id}</th>
+                                <td>${user.email}</td>
+                                <td>${user.fullName}</td>
+                                <td>
+                                    <div class="btn btn-success">View</div>
+                                    <div class="btn btn-warning">Update</div>
+                                    <div class="btn btn-danger">Delete</div>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
