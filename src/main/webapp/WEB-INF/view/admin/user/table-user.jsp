@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Users</title>
+    <title>Table Users</title>
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,7 +47,7 @@
                                 <td>${user.fullName}</td>
                                 <td>
                                     <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
-                                    <a class="btn btn-warning">Update</a>
+                                    <a href="user/update/${user.id}" class="btn btn-warning">Update</a>
                                     <a class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
