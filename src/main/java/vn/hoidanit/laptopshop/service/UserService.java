@@ -27,7 +27,7 @@ public class UserService {
         return this.userRepository.findByEmail(email);
     }
 
-    public User findByid(long id) {
+    public User getUserById(long id) {
         return this.userRepository.findById(id);
     }
 
