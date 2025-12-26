@@ -2,7 +2,6 @@ package vn.hoidanit.laptopshop.domain;
 
 import java.util.List;
 
-//javax
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +19,7 @@ public class User {
     private long id;
 
     private String email;
+
     private String password;
     private String fullName;
     private String address;
@@ -27,15 +27,14 @@ public class User {
 
     private String avatar;
 
-    // RoleId
-    // User many to one role
+    // roleId
+    // User many -> to one -> role
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 
-    // user one to many order
     @OneToMany(mappedBy = "user")
-    private List<Order> orders;
+    List<Order> orders;
 
     public long getId() {
         return id;
