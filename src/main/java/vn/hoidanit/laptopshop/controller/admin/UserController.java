@@ -12,8 +12,6 @@ import vn.hoidanit.laptopshop.service.UserService;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.servlet.ServletContext;
-
 @Controller
 public class UserController {
 
