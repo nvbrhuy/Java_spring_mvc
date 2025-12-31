@@ -8,7 +8,7 @@
                     </div>
                     <div class="featurs-content text-center">
                         <h5>Free Shipping</h5>
-                        <p class="mb-0">Free on order over $300</p>
+                        <p class="mb-0">Express delivery within 2 hours</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="featurs-content text-center">
                         <h5>Security Payment</h5>
-                        <p class="mb-0">100% security payment</p>
+                        <p class="mb-0">secure transactions</p>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="featurs-content text-center">
                         <h5>30 Day Return</h5>
-                        <p class="mb-0">30 day money guarantee</p>
+                        <p class="mb-0">Free returns and exchanges</p>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="featurs-content text-center">
                         <h5>24/7 Support</h5>
-                        <p class="mb-0">Support every time fast</p>
+                        <p class="mb-0">enthusiastic support</p>
                     </div>
                 </div>
             </div>
