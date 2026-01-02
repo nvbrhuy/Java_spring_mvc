@@ -9,21 +9,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import vn.hoidanit.laptopshop.domain.Product;
 import vn.hoidanit.laptopshop.domain.User;
+import vn.hoidanit.laptopshop.service.ProductService;
 
 @Controller
 public class ItemController {
-    @GetMapping("/product/{id}")
-    public String getProductPage(Model model, @PathVariable long id) {
-        return "client/product/detail";
+    private final ProductService productService;
+
+    public ItemController(ProductService productService) {
+        this.productService = productService;
     }
 
-    // @RequestMapping("/admin/user/{id}")
-    // public String getUserDetailPage(Model model, @PathVariable long id) {
-    // User user = this.userService.getUserById(id);
-    // model.addAttribute("user", user);
-    // model.addAttribute("id", id);
-    // return "admin/user/detail";
-    // }
-
+    @GetMapping("/product/{id}")
+    public String getProductPage(Model model, @PathVariable long id) {
+        Product pr = this.productService.fetchProductById(id).get();
+        model.addAttribute("product", pr);
+        model.addAttribute("id", id);
+        return "client/product/detail";
+    }
 }
