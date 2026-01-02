@@ -1,41 +1,35 @@
 package vn.hoidanit.laptopshop.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import vn.hoidanit.laptopshop.domain.Product;
-import vn.hoidanit.laptopshop.domain.Role;
 import vn.hoidanit.laptopshop.repository.ProductRepository;
 
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
-    private final UploadService uploadService;
 
-    public ProductService(ProductRepository productRepository, UploadService uploadService) {
+    public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
-        this.uploadService = uploadService;
     }
 
-    public String handleHello() {
-        return "hello from Service";
+    public Product createProduct(Product pr) {
+        return this.productRepository.save(pr);
     }
 
-    public List<Product> getAllProducts() {
+    public List<Product> fetchProducts() {
         return this.productRepository.findAll();
     }
 
-    public Product getProductById(long id) {
+    public Optional<Product> fetchProductById(long id) {
         return this.productRepository.findById(id);
     }
 
-    public Product handleSaveProduct(Product product) {
-        Product huy = this.productRepository.save(product);
-        return huy;
-    }
-
-    public void deleteAProduct(long id) {
+    public void deleteProduct(long id) {
         this.productRepository.deleteById(id);
     }
+
 }

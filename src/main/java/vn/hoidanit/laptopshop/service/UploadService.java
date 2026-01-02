@@ -19,7 +19,7 @@ public class UploadService {
         this.servletContext = servletContext;
     }
 
-    public String handleSaveUploadFile(MultipartFile file, String targetFolder) {
+    public String handleSaveUploadFileUser(MultipartFile file, String targetFolder) {
         // don't upload file
         if (file.isEmpty())
             return "";
@@ -34,6 +34,39 @@ public class UploadService {
             String rootPath = this.servletContext.getRealPath("/resources/images");
 
             File dir = new File(rootPath + File.separator + "avatar");
+            if (!dir.exists())
+                dir.mkdirs();
+
+            finalName = System.currentTimeMillis() + "-" + file.getOriginalFilename();
+
+            File serverFile = new File(dir.getAbsolutePath() + File.separator + finalName);
+
+            BufferedOutputStream stream = new BufferedOutputStream(
+                    new FileOutputStream(serverFile));
+            stream.write(bytes);
+            stream.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return finalName;
+    }
+
+    public String handleSaveUploadFileProduct(MultipartFile file, String targetFolder) {
+        // don't upload file
+        if (file.isEmpty())
+            return "";
+        // relative path: absolute path
+
+        String finalName = "";
+        try {
+            byte[] bytes;
+            bytes = file.getBytes();
+
+            // relative path: absolute path
+            String rootPath = this.servletContext.getRealPath("/resources/images");
+
+            File dir = new File(rootPath + File.separator + "product");
             if (!dir.exists())
                 dir.mkdirs();
 

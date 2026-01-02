@@ -14,13 +14,10 @@ public class UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 
-    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+    public UserService(UserRepository userRepository,
+            RoleRepository roleRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
-    }
-
-    public String handleHello() {
-        return "hello from Service";
     }
 
     public List<User> getAllUsers() {
@@ -28,16 +25,17 @@ public class UserService {
     }
 
     public List<User> getAllUsersByEmail(String email) {
-        return this.userRepository.findByEmail(email);
-    }
-
-    public User getUserById(long id) {
-        return this.userRepository.findById(id);
+        return this.userRepository.findOneByEmail(email);
     }
 
     public User handleSaveUser(User user) {
         User eric = this.userRepository.save(user);
+        System.out.println(eric);
         return eric;
+    }
+
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
     }
 
     public void deleteAUser(long id) {
@@ -45,7 +43,7 @@ public class UserService {
     }
 
     public Role getRoleByName(String name) {
-        Role r = this.roleRepository.findByName(name);
-        return r;
+        return this.roleRepository.findByName(name);
     }
+
 }
