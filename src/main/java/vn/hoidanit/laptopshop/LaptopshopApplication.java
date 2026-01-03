@@ -5,9 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 //include >< exclude
-// @SpringBootApplication
 
-@SpringBootApplication(exclude = org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class)
+// @SpringBootApplication(exclude =
+// org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class)
+@SpringBootApplication
 public class LaptopshopApplication {
 
 	public static void main(String[] args) {

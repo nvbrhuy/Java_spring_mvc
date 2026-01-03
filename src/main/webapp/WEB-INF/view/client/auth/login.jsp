@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login - SB Admin</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <title>Login - Laptopshop</title>
+    <link href="/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,11 +30,11 @@
                                     <form>
                                         <div class="form-floating mb-3">
                                             <input class="form-control" type="email" placeholder="name@example.com" />
-                                            <label for="inputEmail">Email address</label>
+                                            <label>Email address</label>
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input class="form-control" type="password" placeholder="Password" />
-                                            <label for="inputPassword">Password</label>
+                                            <label>Password</label>
                                         </div>
                                         <div class="mt-4 mb-0">
                                             <div class="d-grid">
@@ -47,7 +46,8 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="/register">Need an account? Sign up!</a></div>
+                                    <div class="small"><a href="/register">Need an account? Sign up!</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 
 </html>
