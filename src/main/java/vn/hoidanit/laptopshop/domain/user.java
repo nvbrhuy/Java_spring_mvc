@@ -15,6 +15,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import vn.hoidanit.laptopshop.service.validator.StrongPassword;
 
 @Entity
 @Table(name = "users")
@@ -30,6 +31,7 @@ public class User {
 
     @NotNull
     @Size(min = 2, message = "Passwords must have at least 2 characters.")
+    @StrongPassword(message = "Passwords must have 8 characters.")
     private String password;
 
     @NotNull
