@@ -45,7 +45,11 @@ public class ProductService {
         this.productRepository.deleteById(id);
     }
 
-    public void handelAddProductToCart(String email, Long productId, HttpSession session) {
+    public Cart fetchByUser(User user) {
+        return this.cartRepository.findByUser(user);
+    }
+
+    public void handleAddProductToCart(String email, Long productId, HttpSession session) {
         User user = this.userService.getUserByEmail(email);
         if (user != null) {
             // check user đã có Cart chưa ? nếu chưa -> tạo mới
