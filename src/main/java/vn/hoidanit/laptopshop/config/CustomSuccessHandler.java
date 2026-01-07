@@ -24,6 +24,7 @@ import vn.hoidanit.laptopshop.service.UserService;
 
 public class CustomSuccessHandler implements AuthenticationSuccessHandler {
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+
     @Autowired
     private UserService userService;
 
@@ -41,6 +42,8 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
         if (user != null) {
             session.setAttribute("fullName", user.getFullName());
             session.setAttribute("avatar", user.getAvatar());
+            session.setAttribute("id", user.getId());
+            session.setAttribute("email", user.getEmail());
         }
 
     }
