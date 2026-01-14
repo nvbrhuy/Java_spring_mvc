@@ -42,7 +42,7 @@
 
                                 <li><a class="dropdown-item" href="#">Manager account</a></li>
 
-                                <li><a class="dropdown-item" href="#">purchase history</a></li>
+                                <li><a class="dropdown-item" href="/order-history">purchase history</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
