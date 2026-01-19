@@ -17,6 +17,7 @@ import vn.hoidanit.laptopshop.domain.Product;
 import vn.hoidanit.laptopshop.domain.Product_;
 import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.repository.*;
+import vn.hoidanit.laptopshop.service.Specification.ProductSpecs;
 
 @Service
 public class ProductService {
@@ -44,12 +45,12 @@ public class ProductService {
         return this.productRepository.save(pr);
     }
 
-    private Specification<Product> nameLike(String name) {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.like(root.get(Product_.NAME), "%" + name + "%");
+    public Page<Product> fetchProducts(Pageable pageable) {
+        return this.productRepository.findAll(pageable);
     }
 
-    public Page<Product> fetchProducts(Pageable pageable, String name) {
-        return this.productRepository.findAll(this.nameLike(name), pageable);
+    public Page<Product> fetchProductsWithSpec(Pageable pageable, String name) {
+        return this.productRepository.findAll(ProductSpecs.nameLike(name), pageable);
     }
 
     public Optional<Product> fetchProductById(long id) {
