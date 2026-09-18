@@ -71,7 +71,19 @@ Mở trình duyệt tại: <http://localhost:8080>
 
 ## Tài khoản kiểm thử
 
-Dự án hiện **không có tài khoản mẫu được tạo sẵn**. Để tạo tài khoản người dùng:
+. Dự án hiện có 2 tài khoản kiểm thử:
+
+```Role-admin
+username: admin@gmail.com
+password: 123456
+```
+```Role-user
+username: user@gmail.com
+password: 123456
+```
+
+
+. Để tạo tài khoản người dùng:
 
 1. Truy cập <http://localhost:8080/register>.
 2. Đăng ký với thông tin kiểm thử sau:
